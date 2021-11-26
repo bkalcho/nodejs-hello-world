@@ -19,3 +19,17 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO_OWNER: bkalcho
           WITH_V: true
+
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Release with semver title
+        uses: cycjimmy/semantic-release-action@v2.6.0
+        with:
+          branches:
+            - main
+
