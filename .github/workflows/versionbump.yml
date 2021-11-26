@@ -30,6 +30,5 @@ jobs:
       - name: Release with semver title
         uses: cycjimmy/semantic-release-action@v2.6.0
         with:
-          branches:
-            - main
+          branch: main
 
