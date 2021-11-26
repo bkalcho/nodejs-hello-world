@@ -1,0 +1,19 @@
+{
+  "name": "nodejs-hello-world",
+  "version": "1.1.1",
+  "description": "Test package",
+  "main": "app.js",
+  "scripts": {
+    "test": "exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bkalcho/nodejs-hello-world.git"
+  },
+  "author": "Bojan Kalicanin",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/bkalcho/nodejs-hello-world/issues"
+  },
+  "homepage": "https://github.com/bkalcho/nodejs-hello-world#readme"
+}
