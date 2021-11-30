@@ -31,7 +31,7 @@ jobs:
 
       - name: Release with semver title
         uses: cycjimmy/semantic-release-action@v2.6.0
-        #with:
+        with:
         #  branches: |
         #    [
         #      'main'
@@ -40,6 +40,9 @@ jobs:
             #  @semantic-release/git
             #  @semantic-release/exec
             #  @semantic-release/changelog
+          extra_plugins: |
+            @semantic-release/changelog@3.0.0
+            @semantic-release/git
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
