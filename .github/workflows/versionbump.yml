@@ -36,10 +36,10 @@ jobs:
             [
               'main'
             ]
-          extra_plugins: |
-            @semantic-release/git
-            @semantic-release/exec
-            @semantic-release/changelog
+            #extra_plugins: |
+            #  @semantic-release/git
+            #  @semantic-release/exec
+            #  @semantic-release/changelog
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
