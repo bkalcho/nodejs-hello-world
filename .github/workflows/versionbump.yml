@@ -27,6 +27,8 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
 
+        #- uses: actions/setup-node@v2
+
       - name: Release with semver title
         uses: cycjimmy/semantic-release-action@v2.6.0
         with:
@@ -34,6 +36,10 @@ jobs:
             [
               'main'
             ]
+          extra_plugins: |
+            @semantic-release/git
+            @semantic-release/exec
+            @semantic-release/changelog
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
