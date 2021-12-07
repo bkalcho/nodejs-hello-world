@@ -6,19 +6,19 @@ on:
       - main
 
 jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
+  #build:
+  #  name: Build
+  #  runs-on: ubuntu-latest
+  #  steps:
+  #    - name: Checkout repo
+  #      uses: actions/checkout@v2
 
-      - name: Bump semver and push tag
-        uses: anothrNick/github-tag-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPO_OWNER: bkalcho
-          WITH_V: true
+  #    - name: Bump semver and push tag
+  #      uses: anothrNick/github-tag-action@master
+  #      env:
+  #        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #        REPO_OWNER: bkalcho
+  #        WITH_V: true
 
   release:
     name: Release
@@ -29,7 +29,7 @@ jobs:
 
         #- uses: actions/setup-node@v2
 
-      - name: Release with semver title
+      - name: Action For Semantic Release
         uses: cycjimmy/semantic-release-action@v2.6.0
         with:
         #  branches: |
@@ -40,10 +40,10 @@ jobs:
             #  @semantic-release/git
             #  @semantic-release/exec
             #  @semantic-release/changelog
-          extra_plugins: |
-            @semantic-release/changelog@3.0.0
-            @semantic-release/git
+            #  extra_plugins: |
+            #    @semantic-release/changelog@3.0.0
+            #    @semantic-release/git
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          #NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
